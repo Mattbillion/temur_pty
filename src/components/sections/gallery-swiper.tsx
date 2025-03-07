@@ -91,7 +91,7 @@ const ImageGallery = () => {
 
 export default ImageGallery;
 
-const filterButtons = [
+export const filterButtons = [
   {
     label: "All",
     value: "",

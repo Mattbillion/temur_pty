@@ -4,7 +4,7 @@ export function OurServicesBento() {
       <div className="bg-url text-secondary col-span-1 flex flex-col gap-4 overflow-hidden bg-[url(/images/bento/ramp-bg.webp)] bg-cover p-6 sm:col-span-2 md:col-span-2 xl:col-span-1">
         <h4 className="text-xl font-bold max-md:text-lg">
           Temur
-          <br /> Ramp Insttallation
+          <br /> Ramp Installation
         </h4>
         <p className="text-base font-medium md:text-sm">
           We deliver and install any type of ramp whether curved or straight,

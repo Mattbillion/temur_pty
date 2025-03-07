@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/hero-section/main";
 import { OurServicesBento } from "@/components/sections/our-service";
 import GallerySwiper from "@/components/sections/gallery-swiper";
+import GetInTouchSection from "@/components/sections/get-in-touch";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroSection />
       <OurServicesBento />
       <GallerySwiper />
+      <GetInTouchSection />
     </div>
   );
 }
