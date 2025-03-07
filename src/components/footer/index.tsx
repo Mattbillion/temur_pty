@@ -9,7 +9,7 @@ export function Footer() {
   const contact = footer_links.contact;
   const socials = footer_links.socials;
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-full overflow-hidden max-md:hidden">
       <div className="absolute right-0 my-auto">
         <div className="relative h-[352px] w-[352px]">
           <Image

@@ -1,7 +1,7 @@
 export function OurServicesBento() {
   return (
     <div className="container flex flex-col gap-0 sm:grid-cols-4 sm:grid-rows-3 min-md:grid md:grid-cols-4 xl:grid-cols-4 xl:grid-rows-2">
-      <div className="bg-url text-secondary col-span-1 flex flex-col gap-4 overflow-hidden bg-[url(/images/bento/ramp-bg.webp)] bg-cover p-6 sm:col-span-2 md:col-span-2 xl:col-span-1">
+      <div className="text-secondary col-span-1 flex flex-col gap-4 overflow-hidden bg-[url(/images/bento/ramp-bg.webp)] bg-cover p-6 sm:col-span-2 md:col-span-2 xl:col-span-1">
         <h4 className="text-xl font-bold max-md:text-lg">
           Temur
           <br /> Ramp Installation
