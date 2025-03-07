@@ -1,6 +1,6 @@
 "use client";
 import React, { useMemo, useState } from "react";
-import { filterButtons } from "../../../components/sections/gallery-swiper";
+import { filterButtons } from "@/components/sections/gallery-swiper";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { galleryData } from "@/components/contants";
