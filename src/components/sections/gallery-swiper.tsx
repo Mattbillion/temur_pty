@@ -1,8 +1,9 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
+import "swiper/css/navigation";
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -10,6 +11,7 @@ import { cn } from "@/lib/utils";
 import { galleryData } from "../contants";
 import ImageLightBox from "@/components/lightbox";
 import { FullscreenIcon } from "lucide-react";
+import { Autoplay, Navigation } from "swiper/modules";
 
 const ImageGallery = () => {
   const [filter, setFilter] = useState<string>("");
@@ -43,9 +45,17 @@ const ImageGallery = () => {
           </Button>
         ))}
       </div>
-      <Swiper slidesPerView={4} spaceBetween={24}>
+      <Swiper
+        slidesPerView={4}
+        spaceBetween={24}
+        navigation={true}
+        modules={[Autoplay, Navigation]}
+      >
         {filteredData.map((d, idx) => (
-          <SwiperSlide className="group/item relative aspect-[3/4] overflow-hidden">
+          <SwiperSlide
+            className="group/item relative aspect-[3/4] overflow-hidden"
+            key={idx}
+          >
             <Button
               variant="ghost"
               className="text-secondary absolute top-2 right-2 z-10"
