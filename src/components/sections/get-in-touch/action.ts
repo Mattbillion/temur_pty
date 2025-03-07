@@ -20,7 +20,7 @@ export async function sendContactEmail(formData: z.infer<typeof formSchema>) {
           NAME: fullName,
           INTEREST: interestedIn,
           MESSAGE: message,
-          PHONE: "+976" + phone.replace("+976", ""),
+          PHONE: phone,
         },
         listIds: [parseInt(process.env.BREVO_LIST_ID || "0", 10)],
         updateEnabled: true,
