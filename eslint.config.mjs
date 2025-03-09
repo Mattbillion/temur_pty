@@ -17,7 +17,6 @@ const eslintConfig = [
       quotes: ["error", "double"],
       "prefer-arrow-callback": ["error"],
       "prefer-template": ["error"],
-      unused: ["error"],
     },
   }),
 ];
