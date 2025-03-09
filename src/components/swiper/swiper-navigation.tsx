@@ -1,8 +1,6 @@
 import React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Swiper as NavigationType } from "swiper";
-import { cn } from "@/lib/utils";
 
 export function SwiperNavigation({ swiperRef }: { swiperRef: any }) {
   React.useEffect(() => {

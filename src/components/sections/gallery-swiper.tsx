@@ -21,7 +21,6 @@ const ImageGallery = () => {
   const swiperRef = useRef<NavigationType>(null);
   const [slides, setSlides] = useState([]);
   const [open, setOpen] = useState<boolean>(false);
-  const scrollRef = useRef(null);
 
   const filteredData =
     filter === ""
