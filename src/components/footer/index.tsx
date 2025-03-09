@@ -90,6 +90,7 @@ export function Footer() {
                       <Link
                         href={c.link}
                         className="text-secondary flex items-center gap-1"
+                        key={idx3}
                       >
                         <Image
                           src="/icons/email.svg"

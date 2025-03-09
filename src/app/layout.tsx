@@ -49,7 +49,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${spaceGrotesk.className} flex min-h-dvh flex-col items-center antialiased`}
+        className={`${spaceGrotesk.className} flex min-h-dvh flex-col items-center bg-[url(/texture/body-pattern.png)] bg-contain antialiased`}
       >
         <Header />
         {children}
