@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import * as motion from "framer-motion/client";
+import * as motion from "motion/react-client";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export function HeroSection() {
