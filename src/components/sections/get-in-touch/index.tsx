@@ -1,4 +1,5 @@
 import { ContactForm } from "./contact-form";
+import Image from "next/image";
 
 export default function GetInTouchSection() {
   return (
@@ -13,15 +14,18 @@ export default function GetInTouchSection() {
               <p className="text-white/90">
                 Feel free to reach out to us for any inquiries or project
                 discussions. Our team is ready to assist you with expert
-                guidance and tailored solutions. Let's build something great
+                guidance and tailored solutions. Let`s build something great
                 together!
               </p>
             </div>
-            <img
-              src="/images/get-in-touch-bg.webp"
-              alt="Get in touch background"
-              className="h-full w-full object-cover"
-            />
+            <div className="relative aspect-square">
+              <Image
+                src="/images/get-in-touch-bg.webp"
+                alt="Get in touch background"
+                className="h-full w-full object-cover"
+                fill
+              />
+            </div>
           </div>
 
           {/* Right side - Form */}
@@ -31,7 +35,7 @@ export default function GetInTouchSection() {
               <p className="text-muted-foreground">
                 Feel free to reach out to us for any inquiries or project
                 discussions. Our team is ready to assist you with expert
-                guidance and tailored solutions. Let's build something great
+                guidance and tailored solutions. Let`s build something great
                 together!
               </p>
             </div>

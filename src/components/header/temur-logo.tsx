@@ -1,12 +1,11 @@
 import * as React from "react";
-const TemurLogo = (props: any) => (
+const TemurLogo = () => (
   <svg
     width={162}
-    height={116}
+    height={72}
     viewBox="0 0 162 116"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    {...props}
   >
     <g clipPath="url(#clip0_860_494)">
       <path

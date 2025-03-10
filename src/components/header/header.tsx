@@ -4,11 +4,8 @@ import React, { useRef } from "react";
 import TemurLogo from "@/components/header/temur-logo";
 import Link from "next/link";
 import { links } from "./contants";
-import { usePathname } from "next/navigation";
-import motion from "motion/react";
 
 export const Header = () => {
-  const pathname = usePathname();
   const scrollRef = useRef(null);
   console.log(scrollRef, "scroll");
 
@@ -19,7 +16,7 @@ export const Header = () => {
     >
       <div>
         <Link href="/">
-          <TemurLogo className="h-[72px]" />
+          <TemurLogo />
         </Link>
       </div>
       <div className="flex items-center gap-8">

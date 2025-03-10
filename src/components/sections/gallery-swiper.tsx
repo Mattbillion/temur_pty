@@ -18,8 +18,8 @@ import { SwiperNavigation } from "@/components/swiper/swiper-navigation";
 
 const ImageGallery = () => {
   const [filter, setFilter] = useState<string>("");
-  const swiperRef = useRef<NavigationType>(null);
-  const [slides, setSlides] = useState([]);
+  const swiperRef = useRef<NavigationType | null>(null);
+  const [slides, setSlides] = useState<{ src: string; alt: string }[]>([]);
   const [open, setOpen] = useState<boolean>(false);
 
   const filteredData =
@@ -64,7 +64,7 @@ const ImageGallery = () => {
             spaceBetween={24}
             navigation={true}
             modules={[Autoplay, Navigation]}
-            onSwiper={(swiper) => (swiperRef.current = swiper)}
+            onBeforeInit={(swiper) => (swiperRef.current = swiper)}
             className="relative"
           >
             {filteredData.map((d, idx) => (
@@ -76,7 +76,8 @@ const ImageGallery = () => {
                   variant="ghost"
                   className="text-secondary absolute top-2 right-2 z-10"
                   onClick={() => {
-                    setOpen(true), setSlides(d.images as any);
+                    setOpen(true);
+                    setSlides(d.images);
                   }}
                 >
                   <FullscreenIcon size={24} />

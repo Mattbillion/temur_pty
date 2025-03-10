@@ -11,7 +11,7 @@ import ImageLightBox from "@/components/lightbox";
 export function Gallery() {
   const [filter, setFilter] = React.useState("");
   const [open, setOpen] = useState<boolean>(false);
-  const [slides, setSlides] = useState([]);
+  const [slides, setSlides] = useState<{ src: string; alt: string }[]>([]);
 
   const filteredData = useMemo(() => {
     return filter
@@ -48,7 +48,8 @@ export function Gallery() {
               variant="ghost"
               className="text-secondary absolute top-2 right-2 z-10"
               onClick={() => {
-                setOpen(true), setSlides(d.images as any);
+                setOpen(true);
+                setSlides(d.images);
               }}
             >
               <FullscreenIcon size={24} />
@@ -69,7 +70,7 @@ export function Gallery() {
       </div>
       <ImageLightBox
         open={open}
-        setOpen={() => setOpen((prevState) => !prevState)}
+        setOpen={(value: boolean) => setOpen(value)}
         images={slides}
       />
     </div>

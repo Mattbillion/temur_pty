@@ -30,7 +30,11 @@ export async function sendContactEmail(formData: z.infer<typeof formSchema>) {
     if (!response.ok) throw new Error(`API Error: ${response.statusText}`);
 
     return { success: true, message: "Request sent successfully!" };
-  } catch (error: any) {
-    return { success: false, error: error.message };
+  } catch (error) {
+    return {
+      success: false,
+      error:
+        error instanceof Error ? error.message : "An unknown error occurred",
+    };
   }
 }
