@@ -42,14 +42,14 @@ const ImageGallery = () => {
           <h4 className="text-secondary text-3xl font-bold">Gallery</h4>
           <Button className="rounded-md">See all</Button>
         </div>
-        <div className="mb-6 flex items-center gap-1.5">
+        <div className="mb-6 flex snap-x snap-mandatory items-center gap-1.5 overflow-y-scroll">
           {filterButtons.map((btn, idx) => (
             <Button
               className={cn(
                 filter === btn.value
                   ? "bg-primary border-transparent"
                   : "bg-background",
-                "rounded-full border border-slate-700 px-4 py-2",
+                "snap-start rounded-full border border-slate-700 px-4 py-2",
               )}
               onClick={() => setFilter(btn.value)}
               key={idx}
@@ -60,6 +60,16 @@ const ImageGallery = () => {
         </div>
         <div className="relative">
           <Swiper
+            breakpoints={{
+              0: {
+                slidesPerView: 3,
+                spaceBetween: 12,
+              },
+              1200: {
+                slidesPerView: 4,
+                spaceBetween: 24,
+              },
+            }}
             slidesPerView={4}
             spaceBetween={24}
             navigation={true}

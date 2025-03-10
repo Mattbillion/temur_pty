@@ -3,35 +3,63 @@ import React from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "motion/react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export const HeroSection = () => (
   <div className="relative flex h-screen w-full items-center justify-center overflow-hidden">
     <div className="absolute -top-[500px] -left-[520px] size-[978px] rounded-full bg-[#F63426] opacity-30 blur-[250px]" />
     <div className="absolute -top-[500px] -right-[450px] size-[1200px] rounded-full bg-[#02336E] opacity-30 blur-[96px]" />
     <motion.div
-      initial={{ opacity: 0, y: -100 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="absolute right-0 left-0 z-10 mx-auto flex flex-col items-center justify-center"
+      className="absolute flex w-full max-w-[1200px] flex-col items-center justify-center max-md:px-6"
+      initial={{
+        opacity: 0,
+        y: -20,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          type: "spring",
+          duration: 2,
+          bounce: 0.2,
+        },
+      }}
     >
-      <div className="pointer-events-none flex flex-col items-center">
-        <AnimatedType />
-        <div className="bg w-fit rounded-md bg-[#F63426] px-6 py-2">
-          <p className="text-secondary text-lg">
-            Reinforcement installation with expertise and reliability
-          </p>
-        </div>
+      <AnimatedType />
+      <div className="bg w-fit rounded-md bg-[#F63426] px-6 py-2 max-md:bg-transparent max-md:px-4 max-md:py-1">
+        <p className="text-secondary text-center max-md:text-base md:text-lg">
+          Reinforcement installation with expertise and reliability
+        </p>
       </div>
     </motion.div>
-    <div className="relative aspect-auto h-[420px] w-full">
+
+    <motion.div
+      className="relative h-full w-full md:max-h-[720px] md:max-w-[1280px]"
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+        transition: {
+          duration: 1,
+          delay: 0.2,
+        },
+      }}
+    >
       <Image
         src="/texture/text-texture-home.png"
-        alt="dada"
+        alt="texture"
         fill
         className="object-contain"
       />
-    </div>
+    </motion.div>
 
-    <div className="absolute right-0 bottom-20 left-0 z-20"></div>
+    <DotLottieReact
+      src="https://lottie.host/d99fc093-282c-47fc-ac14-2b96b0d3587c/SgDvgX74eA.lottie"
+      loop
+      autoplay
+      className="absolute bottom-0 z-10 size-[176px]"
+    />
   </div>
 );
 
@@ -45,7 +73,7 @@ export function AnimatedType() {
         5000,
       ]}
       speed={50}
-      style={{ fontSize: "80px", fontWeight: "bold", color: "white" }}
+      className="text-secondary text-center text-[72px] font-bold max-md:text-[48px]"
       repeat={Infinity}
     />
   );

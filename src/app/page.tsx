@@ -7,7 +7,7 @@ import * as motion from "motion/react-client";
 export default function Home() {
   return (
     <motion.div
-      className="w-full space-y-[72px]"
+      className="w-full"
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ amount: 0.2 }}

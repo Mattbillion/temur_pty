@@ -6,7 +6,7 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export function HeroSection() {
   return (
-    <div className="relative mb-[144px] flex h-screen w-full items-center justify-center overflow-hidden">
+    <div className="relative flex h-screen w-full items-center justify-center overflow-hidden max-md:mb-6 md:mb-[24px]">
       <div className="absolute -top-[500px] -left-[520px] size-[978px] rounded-full bg-[#F63426] opacity-30 blur-[250px]" />
       <div className="absolute -top-[500px] -right-[450px] size-[1200px] rounded-full bg-[#02336E] opacity-30 blur-[96px]" />
       <motion.div
@@ -22,10 +22,15 @@ export function HeroSection() {
           },
         }}
       >
-        <Image src="/texture/our-service-texture.png" alt="texture" fill />
+        <Image
+          src="/texture/our-service-texture.png"
+          alt="texture"
+          fill
+          className="object-contain"
+        />
       </motion.div>
       <motion.div
-        className="absolute flex w-full max-w-[1200px] flex-col"
+        className="absolute flex w-full max-w-[1200px] flex-col max-md:px-6"
         initial={{
           opacity: 0,
           y: -20,
@@ -40,10 +45,10 @@ export function HeroSection() {
           },
         }}
       >
-        <h1 className="text-center text-[72px] font-bold text-white">
+        <h1 className="text-center text-[56px] font-bold text-white max-md:text-[32px]">
           OUR SERVICES
         </h1>
-        <p className="text-secondary text-center text-xl">
+        <p className="text-secondary text-center text-xl max-md:text-base">
           Temur possesses the expertise and capability to deliver efficient,
           effective, and reliable services across the residential, commercial,
           and industrial sectors, specializing in the structural elements listed

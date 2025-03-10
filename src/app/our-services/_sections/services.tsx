@@ -5,9 +5,12 @@ import * as motion from "motion/react-client";
 export function Services() {
   return (
     <motion.div
-      className="container mb-[144px] flex flex-col gap-6 sm:grid sm:grid-cols-2 sm:gap-4 md:grid-cols-3 md:gap-12"
+      className="container mb-[144px] flex flex-col gap-4 sm:grid sm:grid-cols-2 sm:gap-4 md:grid-cols-3 md:gap-12"
       viewport={{ amount: 0.5 }}
     >
+      <h1 className="text-secondary hidden text-start text-2xl font-bold max-md:block">
+        Our services
+      </h1>
       {services.map((service, idx) => (
         <motion.div
           key={idx}
