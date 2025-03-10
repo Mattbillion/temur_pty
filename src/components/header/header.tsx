@@ -4,20 +4,19 @@ import React, { useRef, useState } from "react";
 import TemurLogo from "@/components/header/temur-logo";
 import Link from "next/link";
 import { links } from "./contants";
-import { useScroll } from "motion/react";
-import { useMotionValueEvent } from "framer-motion";
+import { useScroll, useMotionValueEvent } from "motion/react";
 import { cn } from "@/lib/utils";
 
 export const Header = () => {
   const scrollRef = useRef(null);
   const { scrollY } = useScroll();
-  const [scrolled, setSrolled] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 200) {
-      setSrolled(true);
+      setScrolled(true);
     } else {
-      setSrolled(false);
+      setScrolled(false);
     }
   });
 
