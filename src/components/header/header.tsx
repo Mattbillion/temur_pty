@@ -12,7 +12,6 @@ export const Header = () => {
   const scrollRef = useRef(null);
   const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState<boolean>(false);
-
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 200) {
       setScrolled(true);
@@ -29,16 +28,20 @@ export const Header = () => {
       )}
     >
       <div
-        className="container flex items-center justify-between py-4 max-md:hidden"
+        className="container flex items-center justify-between py-2 max-md:p-2 max-md:px-4"
         ref={scrollRef}
       >
+        <Link
+          href="/"
+          className={cn(
+            scrolled ? "size-[80px]" : "size-[124px]",
+            "transition-all duration-300 max-md:size-[72px]",
+          )}
+        >
+          <TemurLogo customClass="w-full h-full" />
+        </Link>
         <SideMenu />
-        <div>
-          <Link href="/">
-            <TemurLogo />
-          </Link>
-        </div>
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-8 max-md:hidden">
           {links.map((link, idx) => (
             <Link
               href={link.href}
