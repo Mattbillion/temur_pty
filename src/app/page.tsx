@@ -1,7 +1,7 @@
-import { HeroSection } from "@/components/hero-section/main";
-import { OurServicesBento } from "@/components/sections/our-service";
-import GallerySwiper from "@/components/sections/gallery-swiper";
-import GetInTouchSection from "@/components/sections/get-in-touch";
+import { HeroSection } from "@/components/hero-section";
+// import { OurServicesBento } from "@/components/sections/our-service";
+// import GallerySwiper from "@/components/sections/gallery-swiper";
+// import GetInTouchSection from "@/components/sections/get-in-touch";
 import * as motion from "motion/react-client";
 
 export default function Home() {
@@ -12,10 +12,10 @@ export default function Home() {
       whileInView="onscreen"
       viewport={{ amount: 0.2 }}
     >
-      <HeroSection />
-      <OurServicesBento />
-      <GallerySwiper />
-      <GetInTouchSection />
+      <HeroSection wrapperClass="" imgSrc="/texture/text-texture-home.png" />
+      {/*<OurServicesBento />*/}
+      {/*<GallerySwiper />*/}
+      {/*<GetInTouchSection />*/}
     </motion.div>
   );
 }
