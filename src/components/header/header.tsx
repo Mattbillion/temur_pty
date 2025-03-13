@@ -6,6 +6,7 @@ import Link from "next/link";
 import { links } from "./contants";
 import { useScroll, useMotionValueEvent } from "motion/react";
 import { cn } from "@/lib/utils";
+import { SideMenu } from "@/components/header/side-menu";
 
 export const Header = () => {
   const scrollRef = useRef(null);
@@ -31,6 +32,7 @@ export const Header = () => {
         className="container flex items-center justify-between py-4 max-md:hidden"
         ref={scrollRef}
       >
+        <SideMenu />
         <div>
           <Link href="/">
             <TemurLogo />
