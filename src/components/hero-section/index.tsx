@@ -3,7 +3,7 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import { motion } from "framer-motion";
+import * as motion from "motion/react-client";
 
 export function HeroSection({ wrapperClass, imgSrc }: HeroSectionPropsType) {
   return (
