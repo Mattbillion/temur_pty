@@ -9,13 +9,23 @@ export function TypeAnimate({
   customClass,
 }: ExtendedTypeAnimationProps) {
   return (
-    <TypeAnimation
-      wrapper="div"
-      sequence={sequence}
-      speed={speed}
-      className={cn(customClass ? customClass : "", "text-secondary font-bold")}
-      repeat={Infinity}
-    />
+    <div className="absolute flex w-full flex-col gap-1 px-4 py-2 sm:items-center md:justify-center">
+      <TypeAnimation
+        wrapper="div"
+        sequence={sequence}
+        speed={speed}
+        className={cn(
+          customClass ? customClass : "",
+          "text-secondary font-bold",
+        )}
+        repeat={Infinity}
+      />
+      <div className="md:bg-primary text-secondary rounded-md md:px-3 md:py-1 md:text-center md:text-lg">
+        <h6 className="text-center">
+          Reinforcement installation with expertise and reliability
+        </h6>
+      </div>
+    </div>
   );
 }
 

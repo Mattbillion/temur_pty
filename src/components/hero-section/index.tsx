@@ -2,8 +2,8 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { TypeAnimate } from "@/components/type-animate";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { motion } from "framer-motion";
 
 export function HeroSection({ wrapperClass, imgSrc }: HeroSectionPropsType) {
   return (
@@ -25,28 +25,29 @@ export function HeroSection({ wrapperClass, imgSrc }: HeroSectionPropsType) {
           />
         </div>
       )}
-      <div className="absolute flex w-full flex-col items-center justify-start gap-1 px-4 py-2">
-        <TypeAnimate
-          sequence={[
-            "STEELFIXING YOU CAN TRUST",
-            5000,
-            "TEMUR REINFORCEMENT",
-            5000,
-          ]}
-          speed={50}
-          customClass="text-[40px] text-start md:text-[72px] md:text-center"
-        />
-        <div className="md:bg-primary text-secondary rounded-md text-start md:px-3 md:py-1 md:text-center md:text-lg">
-          <h6 className="text-start">
+      <motion.div
+        className="absolute flex flex-col items-center gap-2 p-4 md:py-6"
+        initial={{ opacity: 0, y: -32 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 1,
+        }}
+      >
+        <h1 className="text-secondary text-center text-[32px] font-bold sm:text-[40px] md:text-[72px]">
+          STEELFIXING YOU CAN TRUST
+        </h1>
+        <div className="md:bg-primary text-secondary rounded-md max-sm:max-w-[320px] max-sm:min-w-[280px] md:px-3 md:py-1 md:text-center md:text-lg">
+          <h6 className="text-center">
             Reinforcement installation with expertise and reliability
           </h6>
         </div>
-      </div>
+      </motion.div>
+      \
       <DotLottieReact
         src="https://lottie.host/d99fc093-282c-47fc-ac14-2b96b0d3587c/SgDvgX74eA.lottie"
         loop
         autoplay
-        className="absolute bottom-0 z-10 size-[176px]"
+        className="absolute bottom-0 z-10 size-[96px] md:size-[176px]"
       />
     </div>
   );
