@@ -27,10 +27,10 @@ function ServiceItem({ service }: ServiceItemProps) {
         y: 0,
         transition: { duration: 0.5 },
       }}
-      viewport={{ amount: 0.2 }}
+      viewport={{ once: true, amount: 0.2 }}
       className={cn(
         service.customClasses,
-        "relative h-[278px] w-full overflow-hidden select-none sm:h-[344px] md:h-[352px] lg:h-[388px]",
+        "relative h-[288px] w-full overflow-hidden select-none sm:h-[344px] md:h-[352px] lg:h-[388px]",
       )}
     >
       <Link href="/">
@@ -54,7 +54,13 @@ function ServiceItem({ service }: ServiceItemProps) {
           }}
         />
         {service.bgImage && (
-          <Image src={service.bgImage} alt="dada" fill objectFit="cover" />
+          <Image
+            src={service.bgImage}
+            alt="dada"
+            fill
+            objectFit="cover"
+            priority
+          />
         )}
       </Link>
     </motion.div>
