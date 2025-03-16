@@ -1,5 +1,6 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import { ImageItem } from "@/components/gallery/image-item";
+import ImageLightBox from "@/components/lightbox";
 
 export function RenderImages({
   images,
@@ -10,20 +11,42 @@ export function RenderImages({
   loading?: boolean;
   children?: ReactNode;
 }) {
+  const [index, setIndex] = useState(0);
+  const [open, setOpen] = useState(false);
+  const handleOpen = (value: boolean) => {
+    setOpen(value);
+  };
   if (loading) return <ImagesSkeleton />;
   return (
-    <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      {images.map((image, idx) => (
-        <ImageItem image={image} key={idx} />
-      ))}
-      {children}
+    <div className="w-full">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {images.map((image, idx) => (
+          <div
+            key={idx}
+            onClick={() => {
+              setOpen(true);
+              setIndex(idx);
+            }}
+          >
+            <ImageItem image={image} />
+          </div>
+        ))}
+
+        {children}
+      </div>
+      <ImageLightBox
+        open={open}
+        setOpen={handleOpen}
+        images={images}
+        index={index}
+      />
     </div>
   );
 }
 
 export function ImagesSkeleton() {
   return (
-    <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {[...Array(8)].map((_, index) => (
         <div
           key={index}
