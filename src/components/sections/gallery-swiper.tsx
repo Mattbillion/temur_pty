@@ -1,30 +1,58 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { galleryData } from "../contants";
-import ImageLightBox from "@/components/lightbox";
+
 import { Navigation, Autoplay } from "swiper/modules";
 
 import * as motion from "motion/react-client";
 import { Swiper as NavigationType } from "swiper";
 import { SwiperNavigation } from "@/components/swiper/swiper-navigation";
+import { CldImage } from "next-cloudinary";
+import { GalleryFilter } from "@/components/gallery/gallery-filter";
+import { CloudinaryImage } from "@/components/gallery/render-images";
+import { FetchImages } from "@/components/gallery/action";
 
 const ImageGallery = () => {
-  const [filter, setFilter] = useState<string>("");
   const swiperRef = useRef<NavigationType | null>(null);
-  const [slides, setSlides] = useState<{ src: string; alt: string }[]>([]);
-  const [open, setOpen] = useState<boolean>(false);
+  const [loading, setLoading] = useState(true);
+  const [images, setImages] = useState<CloudinaryImage[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [filterValue, setFilterValue] = useState("");
 
-  const filteredData =
-    filter === ""
-      ? galleryData
-      : galleryData.filter((data) => data.type === filter);
+  const handleFilterChange = (value: string) => {
+    setFilterValue(value);
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const fetchOptions = {
+          maxResults: "500",
+          tags: filterValue,
+        };
+
+        const data = await FetchImages({ fetchOptions });
+        setImages(data?.resources);
+      } catch (error) {
+        if (error instanceof Error) {
+          setError(error.message);
+        } else {
+          setError(String(error));
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [filterValue]);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <div>
@@ -41,22 +69,7 @@ const ImageGallery = () => {
           <h4 className="text-secondary text-3xl font-bold">Gallery</h4>
           <Button className="rounded-md">See all</Button>
         </div>
-        <div className="mb-6 flex snap-x snap-mandatory items-center gap-1.5 overflow-y-scroll">
-          {filterButtons.map((btn, idx) => (
-            <Button
-              className={cn(
-                filter === btn.value
-                  ? "bg-primary border-transparent"
-                  : "bg-background",
-                "snap-start rounded-full border border-slate-700 px-4 py-2",
-              )}
-              onClick={() => setFilter(btn.value)}
-              key={idx}
-            >
-              {btn.label}
-            </Button>
-          ))}
-        </div>
+        <GalleryFilter handleFilterChange={handleFilterChange} />
         <div className="relative">
           <Swiper
             breakpoints={{
@@ -76,19 +89,16 @@ const ImageGallery = () => {
             onBeforeInit={(swiper) => (swiperRef.current = swiper)}
             className="relative"
           >
-            {filteredData.map((d, idx) => (
+            {images.map((d, idx) => (
               <SwiperSlide
                 className="group/item relative aspect-[3/4] overflow-hidden"
                 key={idx}
-                onClick={() => {
-                  setOpen(true);
-                  setSlides(d.images);
-                }}
               >
-                <Image
-                  src={d.masterImage.src}
-                  alt={d.masterImage.alt}
-                  fill
+                <CldImage
+                  src={d.url}
+                  alt={d.public_id}
+                  width={d.width}
+                  height={d.height}
                   className="object-cover transition-transform duration-300 group-hover/item:scale-110"
                 />
                 <div className="bg-background absolute inset-0 opacity-0 transition-opacity duration-300 group-hover/item:opacity-50">
@@ -101,12 +111,6 @@ const ImageGallery = () => {
           </Swiper>
           <SwiperNavigation swiperRef={swiperRef} />
         </div>
-
-        <ImageLightBox
-          open={open}
-          setOpen={() => setOpen((prevState) => !prevState)}
-          images={slides}
-        />
       </motion.div>
     </div>
   );
