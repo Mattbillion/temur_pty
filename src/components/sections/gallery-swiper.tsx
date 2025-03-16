@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { galleryData } from "../contants";
 import ImageLightBox from "@/components/lightbox";
-import { FullscreenIcon } from "lucide-react";
 import { Navigation, Autoplay } from "swiper/modules";
 
 import * as motion from "motion/react-client";
@@ -28,7 +27,7 @@ const ImageGallery = () => {
       : galleryData.filter((data) => data.type === filter);
 
   return (
-    <motion.div>
+    <div>
       <motion.div
         className="container"
         initial={{ opacity: 0, y: 100 }}
@@ -81,17 +80,11 @@ const ImageGallery = () => {
               <SwiperSlide
                 className="group/item relative aspect-[3/4] overflow-hidden"
                 key={idx}
+                onClick={() => {
+                  setOpen(true);
+                  setSlides(d.images);
+                }}
               >
-                <Button
-                  variant="ghost"
-                  className="text-secondary absolute top-2 right-2 z-10"
-                  onClick={() => {
-                    setOpen(true);
-                    setSlides(d.images);
-                  }}
-                >
-                  <FullscreenIcon size={24} />
-                </Button>
                 <Image
                   src={d.masterImage.src}
                   alt={d.masterImage.alt}
@@ -115,7 +108,7 @@ const ImageGallery = () => {
           images={slides}
         />
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 

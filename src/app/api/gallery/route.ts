@@ -1,0 +1,40 @@
+import { NextResponse } from "next/server";
+
+export async function GET(req: Request) {
+  const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
+  const apiKey = process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY;
+  const apiSecret = process.env.CLOUDINARY_API_SECRET;
+
+  try {
+    const { searchParams } = new URL(req.url);
+    const maxResults = searchParams.get("max_results") || "10"; // Default to 10 if not provided
+    let tags = searchParams.get("tags") || ""; // Default to empty if not provided
+
+    if (tags === "All") {
+      tags = "";
+    }
+
+    const apiUrl = `https://api.cloudinary.com/v1_1/${cloudName}/resources/image${
+      tags ? `/tags/${encodeURIComponent(tags)}` : ""
+    }?max_results=${encodeURIComponent(maxResults)}`;
+
+    const response = await fetch(apiUrl, {
+      headers: {
+        Authorization: `Basic ${Buffer.from(`${apiKey}:${apiSecret}`).toString("base64")}`,
+      },
+      method: "GET",
+    });
+
+    if (!response.ok) {
+      throw new Error(`Cloudinary API error: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return NextResponse.json(data, { status: 200 });
+  } catch (error) {
+    return NextResponse.json(
+      { error: (error as Error).message },
+      { status: 500 },
+    );
+  }
+}
