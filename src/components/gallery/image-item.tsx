@@ -30,6 +30,7 @@ export function ImageItem({ image }: { image: CloudinaryImage }) {
         alt={image.public_id}
         width={containerWidth}
         height={432}
+        quality="auto:low"
         className="h-full w-full object-cover transition-all duration-200 group-hover/image:scale-105"
       />
     </div>

@@ -15,6 +15,7 @@ import { CldImage } from "next-cloudinary";
 import { GalleryFilter } from "@/components/gallery/gallery-filter";
 import { CloudinaryImage } from "@/components/gallery/render-images";
 import { FetchImages } from "@/components/gallery/action";
+import { useRouter } from "next/navigation";
 
 const ImageGallery = () => {
   const swiperRef = useRef<NavigationType | null>(null);
@@ -22,6 +23,7 @@ const ImageGallery = () => {
   const [images, setImages] = useState<CloudinaryImage[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [filterValue, setFilterValue] = useState("");
+  const router = useRouter();
 
   const handleFilterChange = (value: string) => {
     setFilterValue(value);
@@ -31,7 +33,7 @@ const ImageGallery = () => {
     const fetchData = async () => {
       try {
         const fetchOptions = {
-          maxResults: "500",
+          maxResults: "50",
           tags: filterValue,
         };
 
@@ -67,7 +69,12 @@ const ImageGallery = () => {
       >
         <div className="mb-6 flex items-center justify-between">
           <h4 className="text-secondary text-3xl font-bold">Gallery</h4>
-          <Button className="rounded-md">See all</Button>
+          <Button
+            className="rounded-md"
+            onClick={() => router.push("/gallery")}
+          >
+            See all
+          </Button>
         </div>
         <GalleryFilter handleFilterChange={handleFilterChange} />
         <div className="relative">
@@ -136,6 +143,7 @@ function ImageItem({ image }: { image: CloudinaryImage }) {
         alt={image.public_id}
         width={containerWidth}
         height={containerWidth * (3 / 4)}
+        quality="auto:low"
         className="h-full w-full object-cover transition-transform duration-300 group-hover/item:scale-110"
       />
     </div>
