@@ -136,6 +136,7 @@ function ImageItem({ image }: { image: CloudinaryImage }) {
         alt={image.public_id}
         width={containerWidth}
         height={containerWidth * (3 / 4)}
+        quality="auto:low"
         className="h-full w-full object-cover transition-transform duration-300 group-hover/item:scale-110"
       />
     </div>

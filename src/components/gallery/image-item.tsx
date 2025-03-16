@@ -27,6 +27,7 @@ export function ImageItem({ image }: { image: CloudinaryImage }) {
         alt={image.public_id}
         width={containerWidth}
         height={400}
+        quality="auto:low"
         className="h-full w-full object-cover"
       />
     </div>
