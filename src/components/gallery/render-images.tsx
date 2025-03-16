@@ -10,7 +10,7 @@ export function RenderImages({
 }) {
   if (loading) return <Skeleton />;
   return (
-    <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+    <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {images.map((image: CloudinaryImage) => (
         <div key={image.asset_id} className="h-[400px]">
           <CldImage
@@ -28,7 +28,7 @@ export function RenderImages({
 
 export function Skeleton() {
   return (
-    <div className="grid w-full grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+    <div className="grid w-full grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {[...Array(8)].map((_, index) => (
         <div
           key={index}
