@@ -48,7 +48,7 @@ export default function Gallery() {
   if (error) return null;
 
   return (
-    <div className="container mt-[256px] flex flex-col gap-6">
+    <div className="container mt-[256px] flex w-full flex-col gap-6">
       <GalleryFilter handleFilterChange={handleFilterChange} />
       <RenderImages images={images} loading={loading} />
     </div>

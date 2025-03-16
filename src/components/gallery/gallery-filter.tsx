@@ -14,7 +14,7 @@ export function GalleryFilter({
     handleFilterChange(value);
   };
   return (
-    <div className="mb-6 flex snap-x snap-mandatory items-center gap-1.5 overflow-y-scroll">
+    <div className="mb-6 flex w-full snap-x snap-mandatory items-center gap-1.5 overflow-x-scroll">
       {filterTags.map((tag, idx) => (
         <Button
           key={idx}
@@ -41,6 +41,6 @@ export const filterTags = [
   { value: "post-tension-slabs", label: "Post-tensions slab" },
   { value: "ground-work", label: "Ground work and mesh" },
   { value: "drill&epoxy", label: "Drill and epoxy" },
-  { value: "conventional-slab", label: "Conventional Slab" },
-  { value: "Capping-beam", label: "Capping Beam" },
+  { value: "Conventional-slab", label: "Conventional Slab" },
+  { value: "capping-beam", label: "Capping Beam" },
 ];
