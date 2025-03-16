@@ -8,6 +8,7 @@ export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
     const maxResults = searchParams.get("max_results") || "10"; // Default to 10 if not provided
+    const cursor = searchParams.get("next_cursor");
     let tags = searchParams.get("tags") || ""; // Default to empty if not provided
 
     if (tags === "All") {
@@ -16,7 +17,7 @@ export async function GET(req: Request) {
 
     const apiUrl = `https://api.cloudinary.com/v1_1/${cloudName}/resources/image${
       tags ? `/tags/${encodeURIComponent(tags)}` : ""
-    }?max_results=${encodeURIComponent(maxResults)}`;
+    }?max_results=${encodeURIComponent(maxResults)}${cursor ? `&next_cursor=${encodeURIComponent(cursor)}` : ""}`;
 
     const response = await fetch(apiUrl, {
       headers: {

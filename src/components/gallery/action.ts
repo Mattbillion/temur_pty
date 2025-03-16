@@ -5,11 +5,14 @@ export async function FetchImages({
 }: {
   fetchOptions?: fetchOptionsType;
 }): Promise<CloudinaryAPIResponse> {
-  const params = new URLSearchParams({
+  const sda: Record<string, string> = {
     max_results: fetchOptions?.maxResults || "10",
     tags: fetchOptions?.tags || "",
     resource_type: fetchOptions?.resourceType || "image",
-  });
+  };
+  if (fetchOptions?.nextCursor) sda.next_cursor = fetchOptions?.nextCursor;
+
+  const params = new URLSearchParams(sda);
 
   const apiUrl = `/api/gallery?${params.toString()}`;
 
@@ -26,8 +29,10 @@ interface fetchOptionsType {
   maxResults?: string;
   tags?: string;
   resourceType?: string;
+  nextCursor?: string;
 }
 
 export interface CloudinaryAPIResponse {
   resources: CloudinaryImage[];
+  next_cursor?: string;
 }
