@@ -1,5 +1,5 @@
-import { Services } from "@/app/our-services/_sections/services";
-import { HeroSection } from "@/app/our-services/_sections/hero-section";
+import { Services } from "./_sections/services";
+import { HeroSection } from "./_sections/hero-section";
 
 export default function Page() {
   return (

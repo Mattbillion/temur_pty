@@ -23,36 +23,29 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link
-          rel="preconnect"
-          href="https://ozlvasiqfneaqbxldojh.supabase.co"
-        />
-        <link
-          rel="dns-prefetch"
-          href="https://ozlvasiqfneaqbxldojh.supabase.co"
-        />
-        <link rel="preload" as="image" href="/logo.svg" />
-        <link rel="preload" as="image" href="/logo-white.svg" />
-        <link rel="preload" as="image" href="/logo-official.png" />
-        <link rel="preload" as="image" href="/logo-official-black.png" />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
+        <link rel="preload" as="image" href="/texture/body-pattern.png" />
+        {/*<link rel="preload" as="image" href="/logo.svg" />*/}
+        {/*<link rel="preload" as="image" href="/logo-white.svg" />*/}
+        {/*<link rel="preload" as="image" href="/logo-official.png" />*/}
+        {/*<link rel="preload" as="image" href="/logo-official-black.png" />*/}
+        {/*<link*/}
+        {/*  rel="icon"*/}
+        {/*  type="image/png"*/}
+        {/*  sizes="32x32"*/}
+        {/*  href="/favicon-32x32.png"*/}
+        {/*/>*/}
+        {/*<link*/}
+        {/*  rel="icon"*/}
+        {/*  type="image/png"*/}
+        {/*  sizes="16x16"*/}
+        {/*  href="/favicon-16x16.png"*/}
+        {/*/>*/}
       </head>
       <body
         className={`${spaceGrotesk.className} flex min-h-dvh flex-col items-center bg-[url(/texture/body-pattern.png)] bg-contain antialiased`}
       >
         <Header />
-        {children}
+        <div className="flex-1">{children}</div>
         <Footer />
         <Toaster />
       </body>

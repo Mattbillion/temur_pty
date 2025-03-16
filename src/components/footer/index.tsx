@@ -130,7 +130,7 @@ function FooterBottom() {
           <span className="text-secondary text-sm">Serviced by</span>
           <div className="relative aspect-auto h-[32px] w-[132px]">
             <Image
-              src="interpriz-logo.svg"
+              src="/Interpriz-logo.svg"
               alt="interpriz-logo"
               fill
               className="object-contain"

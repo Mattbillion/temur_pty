@@ -18,14 +18,12 @@ export default function GetInTouchSection() {
                 together!
               </p>
             </div>
-            <div className="relative">
-              <Image
-                src="/images/get-in-touch-bg.webp"
-                alt="Get in touch background"
-                className="h-full w-full object-cover"
-                fill
-              />
-            </div>
+            <Image
+              src="/images/get-in-touch-bg.webp"
+              alt="Get in touch background"
+              className="h-full w-full object-cover"
+              fill
+            />
           </div>
 
           {/* Right side - Form */}
