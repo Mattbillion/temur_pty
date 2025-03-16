@@ -4,6 +4,7 @@ import GallerySwiper from "@/components/sections/gallery-swiper";
 // import GetInTouchSection from "@/components/sections/get-in-touch";
 import * as motion from "motion/react-client";
 import { OurServicesBento } from "@/components/sections/our-service";
+import GetInTouchSection from "@/components/sections/get-in-touch";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
       <HeroSection wrapperClass="" imgSrc="/texture/text-texture-home.png" />
       <OurServicesBento />
       <GallerySwiper />
-      {/*<GetInTouchSection />*/}
+      <GetInTouchSection />
     </motion.div>
   );
 }
