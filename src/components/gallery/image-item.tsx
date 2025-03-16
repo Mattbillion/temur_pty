@@ -21,13 +21,16 @@ export function ImageItem({ image }: { image: CloudinaryImage }) {
   }, []);
 
   return (
-    <div ref={containerRef} className="h-[400px]">
+    <div
+      ref={containerRef}
+      className="group/image h-[400px] cursor-pointer overflow-hidden"
+    >
       <CldImage
         src={image.secure_url}
         alt={image.public_id}
         width={containerWidth}
-        height={400}
-        className="h-full w-full object-cover"
+        height={432}
+        className="h-full w-full object-cover transition-all duration-200 group-hover/image:scale-105"
       />
     </div>
   );
