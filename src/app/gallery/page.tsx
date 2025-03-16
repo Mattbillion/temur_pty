@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CldImage } from "next-cloudinary";
 import { GalleryFilter } from "@/components/gallery/gallery-filter";
 import {
   CloudinaryImage,

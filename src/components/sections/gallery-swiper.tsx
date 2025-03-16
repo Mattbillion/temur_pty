@@ -4,17 +4,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { galleryData } from "../contants";
+
 import { Navigation, Autoplay } from "swiper/modules";
 
 import * as motion from "motion/react-client";
 import { Swiper as NavigationType } from "swiper";
 import { SwiperNavigation } from "@/components/swiper/swiper-navigation";
-import { CloudinaryImage, FetchImages, filterTags } from "@/app/gallery/page";
 import { CldImage } from "next-cloudinary";
+import { GalleryFilter } from "@/components/gallery/gallery-filter";
+import { CloudinaryImage } from "@/components/gallery/render-images";
+import { FetchImages } from "@/components/gallery/action";
 
 const ImageGallery = () => {
   const swiperRef = useRef<NavigationType | null>(null);
@@ -22,6 +22,10 @@ const ImageGallery = () => {
   const [images, setImages] = useState<CloudinaryImage[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [filterValue, setFilterValue] = useState("");
+
+  const handleFilterChange = (value: string) => {
+    setFilterValue(value);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -65,22 +69,7 @@ const ImageGallery = () => {
           <h4 className="text-secondary text-3xl font-bold">Gallery</h4>
           <Button className="rounded-md">See all</Button>
         </div>
-        <div className="mb-6 flex snap-x snap-mandatory items-center gap-1.5 overflow-y-scroll">
-          {filterTags.map((btn, idx) => (
-            <Button
-              className={cn(
-                filterValue === btn.value
-                  ? "bg-primary border-transparent"
-                  : "bg-background",
-                "snap-start rounded-full border border-slate-700 px-4 py-2",
-              )}
-              onClick={() => setFilterValue(btn.value)}
-              key={idx}
-            >
-              {btn.label}
-            </Button>
-          ))}
-        </div>
+        <GalleryFilter handleFilterChange={handleFilterChange} />
         <div className="relative">
           <Swiper
             breakpoints={{

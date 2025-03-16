@@ -41,6 +41,3 @@ export type CloudinaryImage = {
   url: string;
   secure_url: string;
 };
-type CloudinaryAPIResponse = {
-  resources: CloudinaryImage[];
-};
