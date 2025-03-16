@@ -18,11 +18,13 @@ export function Services() {
           initial="offscreen"
           whileInView="onscreen"
           variants={cardVariant}
+          viewport={{ once: true }}
         >
           <div className="relative aspect-[8/4] md:aspect-square">
             <Image
               src={service.src}
               alt={service.title}
+              loading="lazy"
               fill
               className="object-cover"
             />

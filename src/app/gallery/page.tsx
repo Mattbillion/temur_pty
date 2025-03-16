@@ -2,11 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { GalleryFilter } from "@/components/gallery/gallery-filter";
-import {
-  CloudinaryImage,
-  RenderImages,
-} from "@/components/gallery/render-images";
+import { RenderImages } from "@/components/gallery/render-images";
 import { FetchImages } from "@/components/gallery/action";
+import { CloudinaryImage } from "@/components/gallery/image-item";
 
 export default function Gallery() {
   const [images, setImages] = useState<CloudinaryImage[]>([]);
@@ -28,6 +26,7 @@ export default function Gallery() {
         };
 
         const data = await FetchImages({ fetchOptions });
+
         setImages(data?.resources);
       } catch (error) {
         if (error instanceof Error) {

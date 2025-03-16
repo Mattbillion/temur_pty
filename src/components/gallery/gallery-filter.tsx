@@ -14,21 +14,23 @@ export function GalleryFilter({
     handleFilterChange(value);
   };
   return (
-    <div className="mb-6 flex snap-x snap-mandatory items-center gap-1.5 overflow-y-scroll">
-      {filterTags.map((tag, idx) => (
-        <Button
-          key={idx}
-          className={cn(
-            filterValue === tag.value
-              ? "bg-primary border-transparent"
-              : "bg-background",
-            "snap-start rounded-full border border-slate-700 px-4 py-2",
-          )}
-          onClick={() => handleFilter(tag.value)}
-        >
-          {tag.label}
-        </Button>
-      ))}
+    <div className="w-full snap-x snap-mandatory overflow-y-auto">
+      <div className="mb-6 flex w-fit items-center justify-start gap-1.5">
+        {filterTags.map((tag, idx) => (
+          <Button
+            key={idx}
+            className={cn(
+              filterValue === tag.value
+                ? "bg-primary border-transparent"
+                : "bg-background",
+              "snap-start rounded-full border border-slate-700 px-4 py-2",
+            )}
+            onClick={() => handleFilter(tag.value)}
+          >
+            {tag.label}
+          </Button>
+        ))}
+      </div>
     </div>
   );
 }

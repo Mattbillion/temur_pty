@@ -45,7 +45,7 @@ export default function RootLayout({
         className={`${spaceGrotesk.className} flex min-h-dvh flex-col items-center bg-[url(/texture/body-pattern.png)] bg-contain antialiased`}
       >
         <Header />
-        <div className="flex-1">{children}</div>
+        <div className="w-full flex-1">{children}</div>
         <Footer />
         <Toaster />
       </body>

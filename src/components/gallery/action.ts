@@ -1,4 +1,4 @@
-import { CloudinaryImage } from "@/components/gallery/render-images";
+import { CloudinaryImage } from "@/components/gallery/image-item";
 
 export async function FetchImages({
   fetchOptions,
