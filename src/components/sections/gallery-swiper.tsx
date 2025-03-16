@@ -102,11 +102,6 @@ const ImageGallery = () => {
                 key={idx}
               >
                 <ImageItem image={d} />
-                <div className="bg-background absolute inset-0 opacity-0 transition-opacity duration-300 group-hover/item:opacity-50">
-                  <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover/item:opacity-100">
-                    <p className="text-lg font-semibold text-white">Image</p>
-                  </div>
-                </div>
               </SwiperSlide>
             ))}
           </Swiper>
