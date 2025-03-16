@@ -7,7 +7,7 @@ import { FetchImages } from "@/components/gallery/action";
 import { CloudinaryImage } from "@/components/gallery/image-item";
 import { LoadMore } from "@/components/load-more";
 
-const LIMIT = 24;
+const LIMIT = 20;
 
 export default function Gallery() {
   const [images, setImages] = useState<{
