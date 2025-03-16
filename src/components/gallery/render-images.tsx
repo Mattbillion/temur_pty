@@ -1,5 +1,5 @@
 import React from "react";
-import { CldImage } from "next-cloudinary";
+import { ImageItem } from "@/components/gallery/image-item";
 
 export function RenderImages({
   images,
@@ -11,16 +11,8 @@ export function RenderImages({
   if (loading) return <Skeleton />;
   return (
     <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      {images.map((image: CloudinaryImage) => (
-        <div key={image.asset_id} className="h-[400px]">
-          <CldImage
-            src={image.secure_url}
-            alt={image.public_id}
-            width={image.width}
-            height={image.height}
-            className="h-full w-full object-cover"
-          />
-        </div>
+      {images.map((image, idx) => (
+        <ImageItem image={image} key={idx} />
       ))}
     </div>
   );

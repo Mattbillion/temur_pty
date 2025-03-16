@@ -21,7 +21,7 @@ export function ImageItem({ image }: { image: CloudinaryImage }) {
   }, []);
 
   return (
-    <div ref={containerRef} className="h-[400px] w-full">
+    <div ref={containerRef} className="h-[400px]">
       <CldImage
         src={image.secure_url}
         alt={image.public_id}
