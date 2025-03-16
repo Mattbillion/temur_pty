@@ -94,13 +94,7 @@ const ImageGallery = () => {
                 className="group/item relative aspect-[3/4] overflow-hidden"
                 key={idx}
               >
-                <CldImage
-                  src={d.url}
-                  alt={d.public_id}
-                  width={d.width}
-                  height={d.height}
-                  className="object-cover transition-transform duration-300 group-hover/item:scale-110"
-                />
+                <ImageItem image={d} />
                 <div className="bg-background absolute inset-0 opacity-0 transition-opacity duration-300 group-hover/item:opacity-50">
                   <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover/item:opacity-100">
                     <p className="text-lg font-semibold text-white">Image</p>
@@ -117,6 +111,36 @@ const ImageGallery = () => {
 };
 
 export default ImageGallery;
+
+function ImageItem({ image }: { image: CloudinaryImage }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [containerWidth, setContainerWidth] = useState(300);
+
+  useEffect(() => {
+    const updateWidth = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.offsetWidth);
+      }
+    };
+
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
+  return (
+    <div ref={containerRef} className="h-full w-full">
+      <CldImage
+        src={image.secure_url}
+        alt={image.public_id}
+        width={containerWidth}
+        height={containerWidth * (3 / 4)}
+        className="h-full w-full object-cover transition-transform duration-300 group-hover/item:scale-110"
+      />
+    </div>
+  );
+}
 
 export const filterButtons = [
   {
