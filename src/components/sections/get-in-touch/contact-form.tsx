@@ -21,7 +21,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { filterButtons } from "@/components/sections/gallery-swiper";
 import { formSchema } from "./schema";
 import { sendContactEmail } from "@/components/sections/get-in-touch/action";
 import { useState } from "react";
