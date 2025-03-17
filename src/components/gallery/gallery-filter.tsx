@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -9,12 +11,24 @@ export function GalleryFilter({
   handleFilterChange: (value: string) => void;
   initialValue?: string;
 }) {
-  const [filterValue, setFilterValue] = React.useState(initialValue);
+  const [filterValue, setFilterValue] = useState(initialValue);
+
+  useEffect(() => {
+    const element = document.querySelector(`#tag-${initialValue}`);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    }
+  }, []);
 
   const handleFilter = (value: string) => {
     setFilterValue(value);
     handleFilterChange(value);
   };
+
   return (
     <div className="mb-6 flex w-full snap-x snap-mandatory items-center gap-1.5 overflow-x-scroll">
       {filterTags.map((tag, idx) => (
@@ -26,6 +40,7 @@ export function GalleryFilter({
               : "bg-background",
             "snap-start rounded-full border border-slate-700 px-4 py-2",
           )}
+          id={`tag-${tag.value}`}
           onClick={() => handleFilter(tag.value)}
         >
           {tag.label}
