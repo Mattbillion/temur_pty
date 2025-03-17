@@ -30,7 +30,7 @@ export function GalleryFilter({
   };
 
   return (
-    <div className="mb-6 flex w-full snap-x snap-mandatory items-center gap-1.5 overflow-x-scroll">
+    <div className="scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-200 mb-3 flex w-full snap-x snap-mandatory items-center gap-1.5 overflow-x-auto pb-3">
       {filterTags.map((tag, idx) => (
         <Button
           key={idx}
