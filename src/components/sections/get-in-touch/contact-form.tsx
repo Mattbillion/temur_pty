@@ -26,6 +26,7 @@ import { formSchema } from "./schema";
 import { sendContactEmail } from "@/components/sections/get-in-touch/action";
 import { useState } from "react";
 import { toast } from "sonner";
+import { filterTags } from "@/components/gallery/gallery-filter";
 
 // Define the form values type
 type FormValues = z.infer<typeof formSchema>;
@@ -104,13 +105,11 @@ export function ContactForm() {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  {filterButtons
-                    .filter((c) => !!c.value)
-                    .map((c, idx) => (
-                      <SelectItem key={idx} value={c.value}>
-                        {c.label}
-                      </SelectItem>
-                    ))}
+                  {filterTags.map((c, idx) => (
+                    <SelectItem key={idx} value={c.label}>
+                      {c.label}
+                    </SelectItem>
+                  ))}
                   <SelectItem value="other">Other</SelectItem>
                 </SelectContent>
               </Select>
