@@ -52,6 +52,7 @@ export function ImageItem({ image }: { image: CloudinaryImage }) {
         quality="auto:low"
         placeholder="blur"
         blurDataURL={placeholder}
+        loading="lazy"
         className="h-full w-full bg-slate-900 object-cover transition-all duration-200 group-hover/image:scale-105"
       />
     </div>
