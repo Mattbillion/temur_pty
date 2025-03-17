@@ -4,10 +4,12 @@ import { cn } from "@/lib/utils";
 
 export function GalleryFilter({
   handleFilterChange,
+  initialValue = "",
 }: {
   handleFilterChange: (value: string) => void;
+  initialValue?: string;
 }) {
-  const [filterValue, setFilterValue] = React.useState("");
+  const [filterValue, setFilterValue] = React.useState(initialValue);
 
   const handleFilter = (value: string) => {
     setFilterValue(value);
@@ -32,15 +34,30 @@ export function GalleryFilter({
     </div>
   );
 }
+export function GalleryFilterSkeleton() {
+  return (
+    <div className="mb-6 flex w-full snap-x snap-mandatory items-center gap-1.5 overflow-x-scroll">
+      {filterTags.map((tag, idx) => (
+        <Button
+          key={idx}
+          className="bg-background snap-start rounded-full border border-slate-700 px-4 py-2"
+          disabled
+        >
+          {tag.label}
+        </Button>
+      ))}
+    </div>
+  );
+}
 
 export const filterTags = [
   { value: "", label: "All" },
-  { value: "wall&columns", label: "Walls & Columns" },
+  { value: "wall-n-columns", label: "Walls & Columns" },
   { value: "shear-ties", label: "Shear ties" },
   { value: "ramp-installation", label: "Ramp Installation" },
   { value: "post-tension-slabs", label: "Post-tensions slab" },
   { value: "ground-work", label: "Ground work and mesh" },
-  { value: "drill&epoxy", label: "Drill and epoxy" },
+  { value: "drill-n-epoxy", label: "Drill and epoxy" },
   { value: "conventional-slab", label: "Conventional Slab" },
   { value: "Capping-beam", label: "Capping Beam" },
 ];

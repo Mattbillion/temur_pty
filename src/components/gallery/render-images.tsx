@@ -1,3 +1,4 @@
+"use client";
 import React, { ReactNode, useState } from "react";
 import { ImageItem } from "@/components/gallery/image-item";
 import ImageLightBox from "@/components/lightbox";
