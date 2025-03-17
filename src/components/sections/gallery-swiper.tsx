@@ -71,7 +71,7 @@ const ImageGallery = () => {
           <h4 className="text-secondary text-3xl font-bold">Gallery</h4>
           <Button
             className="rounded-md"
-            onClick={() => router.push("/gallery")}
+            onClick={() => router.push(`/gallery?tag=${filterValue}`)}
           >
             See all
           </Button>
