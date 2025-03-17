@@ -1,3 +1,5 @@
+"use client";
+
 import { MenuIcon } from "lucide-react";
 import {
   Sheet,
@@ -8,8 +10,12 @@ import {
 } from "@/components/ui/sheet";
 import { links } from "@/components/header/contants";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 export function SideMenu() {
+  const pathname = usePathname();
+
   return (
     <Sheet>
       <SheetTrigger asChild className="flex shrink-0 md:hidden">
@@ -26,7 +32,13 @@ export function SideMenu() {
             <SheetClose asChild key={idx}>
               <Link
                 href={link.href}
-                className="text-secondary px-6 py-2 text-2xl font-medium transition-all duration-200 hover:text-3xl hover:text-[#FFB63F]"
+                className={cn(
+                  "text-secondary px-6 py-2 text-2xl font-medium transition-all duration-200 hover:text-3xl hover:text-[#FFB63F]",
+                  {
+                    "text-[#FFB63F]":
+                      pathname !== "/" && pathname === link.href,
+                  },
+                )}
                 type="submit"
               >
                 {link.title}

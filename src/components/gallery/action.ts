@@ -7,7 +7,7 @@ export async function FetchImages({
 }): Promise<CloudinaryAPIResponse> {
   const sda: Record<string, string> = {
     max_results: fetchOptions?.maxResults || "10",
-    tags: fetchOptions?.tags || "",
+    tags: (fetchOptions?.tags || "").replace("-n-", "&"),
     resource_type: fetchOptions?.resourceType || "image",
   };
   if (fetchOptions?.nextCursor) sda.next_cursor = fetchOptions?.nextCursor;

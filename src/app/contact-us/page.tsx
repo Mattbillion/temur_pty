@@ -7,7 +7,7 @@ export default function Page() {
     <div className="w-full">
       <HeroSection />
       <motion.div
-        className="text-secondary container grid grid-cols-4 gap-4"
+        className="text-secondary container grid gap-4 md:grid-cols-4"
         initial={{
           opacity: 0,
           y: -32,

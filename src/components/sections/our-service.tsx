@@ -5,6 +5,7 @@ import * as motion from "motion/react-client";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
+import { TagEnum } from "@/components/gallery/gallery-filter";
 
 export function OurServicesBento() {
   return (
@@ -29,11 +30,11 @@ function ServiceItem({ service }: ServiceItemProps) {
       }}
       viewport={{ once: true, amount: 0.2 }}
       className={cn(
-        service.customClasses,
+        service.className,
         "relative h-[288px] w-full overflow-hidden select-none sm:h-[344px] md:h-[352px] lg:h-[388px]",
       )}
     >
-      <Link href="/">
+      <Link href={`/gallery?tag=${service.tag}`}>
         <div className="text-secondary group/item absolute inset-0 z-20 flex h-full flex-col gap-3 p-4 md:gap-4 md:p-6">
           <div className="flex items-center justify-between">
             <h1 className="text-xl font-bold max-md:text-lg">
@@ -72,50 +73,56 @@ const services: ServiceType[] = [
     title: "Temur Ramp Installation",
     description:
       "We deliver and install any type of ramp whether curved or straight, with beams or any other design. With extensive experience, we ensure that every ramp is finished to the highest standard.",
-    customClasses:
+    className:
       "col-span-1 md:col-span-2 lg:col-span-1 md:aspect-[16/8] lg:aspect-[1/1] ",
     bgColor: "#F63426",
     bgImage: "/images/services/ramp.png",
+    tag: TagEnum.RAMP_INSTALLATION,
   },
   {
     title: "Walls & Columns",
     description:
       "We specialize in delivering precise, efficient, and high-quality solutions for core walls, lift shafts, stairwells, and retaining walls. With extensive experience and meticulous attention to detail, we ensure every project meets the highest standards of performance and durability.",
-    customClasses:
+    className:
       "col-span-1 md:col-span-1 lg:col-span-1 md:aspect-[1/1] lg:aspect-[1/1]",
     bgColor: "#052D5D",
     bgImage: "/images/services/wall-and-columns.png",
+    tag: TagEnum.WALLS_COLUMNS,
   },
 
   {
     title: "Post-tension slab",
     description:
       "Post-tensioned slabs require highly skilled and experienced steel fixers due to their complex detailing, including various sections, beams, trimmers, and shear ties. Precision and efficiency are crucial, as every component must be installed seamlessly. With our extensive experience, we ensure a clean, fast, and high-quality execution.",
-    customClasses: "col-span-1 md:col-span-1 lg:col-span-2 lg:aspect-[1/1]",
+    className: "col-span-1 md:col-span-1 lg:col-span-2 lg:aspect-[1/1]",
     bgColor: "#052D5D",
     bgImage: "/images/services/pt-slab.png",
+    tag: TagEnum.POST_TENSION_SLABS,
   },
   {
     title: "Conventional slab",
     description:
       "Our expertise in conventional slabs allows us to complete projects efficiently and within a short timeframe. With a well-coordinated team and seamless collaboration with crane crews, we ensure a highly organized workflow. This enables us to deliver faster and more efficiently than other methods.",
-    customClasses: "col-span-1 md:col-span-2 lg:col-span-1 md:aspect-[16/8]",
+    className: "col-span-1 md:col-span-2 lg:col-span-1 md:aspect-[16/8]",
     bgColor: "#052D5D",
     bgImage: "/images/services/conventional-slab.png",
+    tag: TagEnum.CONVENTIONAL_SLAB,
   },
   {
     title: "Beam works",
-    customClasses: "col-span-1 md:col-span-2 lg:col-span-2 md:aspect-[16/8]",
+    className: "col-span-1 md:col-span-2 lg:col-span-2 md:aspect-[16/8]",
     description:
       "Beam works are a critical component of every project, involving detailed elements such as close-tie stirrups and leg ties. Typically, beams are designed for thicker slab sections, which demand significant time and manpower. Every detail requires meticulous attention, and our experienced steel fixers possess the expertise to manage the entire process with precision from start to finish. As a result, we can deliver it fast and easily.",
     bgImage: "/images/services/beam-work.png",
+    tag: TagEnum.CAPPING_BEAM,
   },
   {
     title: "See all services",
     description:
       "Explore our full range of reinforcement solutions, including rebar installation, steel fixing, concrete reinforcement, and structural strengthening. Whether it's residential, commercial, or industrial projects, we ensure precision, durability, and compliance with industry standards. Click below to view all our services.",
     bgColor: "#052D5D",
-    customClasses: "col-span-1 md:col-span-1 lg:col-span-1",
+    className: "col-span-1 md:col-span-1 lg:col-span-1",
+    tag: TagEnum.ALL,
   },
 ];
 
@@ -126,7 +133,8 @@ type ServiceItemProps = {
 type ServiceType = {
   title: string;
   description: string;
-  customClasses?: string;
+  className?: string;
   bgColor?: string;
   bgImage?: string;
+  tag?: string;
 };

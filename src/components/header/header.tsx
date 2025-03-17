@@ -7,11 +7,14 @@ import { links } from "./contants";
 import { useScroll, useMotionValueEvent } from "motion/react";
 import { cn } from "@/lib/utils";
 import { SideMenu } from "@/components/header/side-menu";
+import { usePathname } from "next/navigation";
 
 export const Header = () => {
   const scrollRef = useRef(null);
   const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState<boolean>(false);
+  const pathname = usePathname();
+
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 200) {
       setScrolled(true);
@@ -46,7 +49,12 @@ export const Header = () => {
             <Link
               href={link.href}
               key={idx}
-              className="text-secondary text-xl transition-colors duration-100 hover:text-[#FFB63F]"
+              className={cn(
+                "text-secondary text-xl transition-colors duration-100 hover:text-[#FFB63F]",
+                {
+                  "text-[#FFB63F]": pathname !== "/" && pathname === link.href,
+                },
+              )}
             >
               {link.title}
             </Link>

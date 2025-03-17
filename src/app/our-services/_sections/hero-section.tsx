@@ -6,7 +6,7 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export function HeroSection() {
   return (
-    <div className="relative flex h-screen w-full items-center justify-center overflow-hidden max-md:mb-6 md:mb-[24px]">
+    <div className="relative flex h-dvh w-full items-center justify-center overflow-hidden max-md:mb-6 md:mb-[24px]">
       <div className="absolute -top-[500px] -left-[520px] size-[978px] rounded-full bg-[#F63426] opacity-30 blur-[250px]" />
       <div className="absolute -top-[500px] -right-[450px] size-[1200px] rounded-full bg-[#02336E] opacity-30 blur-[96px]" />
       <motion.div

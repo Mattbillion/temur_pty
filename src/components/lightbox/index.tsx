@@ -4,6 +4,7 @@ import { Thumbnails } from "yet-another-react-lightbox/plugins";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import { CloudinaryImage } from "@/components/gallery/render-images";
+import { CldImage } from "next-cloudinary";
 
 export default function ImageLightBox({
   open,
@@ -17,6 +18,29 @@ export default function ImageLightBox({
       thumbnails={{
         border: 1,
         borderColor: "black",
+      }}
+      render={{
+        thumbnail: (props) => (
+          <CldImage
+            src={(props.slide as unknown as Record<string, string>).src}
+            alt=""
+            width={props.rect.width}
+            height={props.rect.height}
+            quality="auto:low"
+            className="h-full w-full"
+            style={{ objectFit: props.imageFit || "contain" }}
+          />
+        ),
+        slide: (props) => (
+          <CldImage
+            src={(props.slide as unknown as Record<string, string>).src}
+            alt=""
+            width={props.rect.width}
+            height={props.rect.height}
+            quality="auto:low"
+            className="h-full w-full object-contain"
+          />
+        ),
       }}
       index={index}
       open={open}
