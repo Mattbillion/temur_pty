@@ -7,15 +7,17 @@ import { cn } from "@/lib/utils";
 export function GalleryFilter({
   handleFilterChange,
   initialValue = "",
+  forceScroll = true,
 }: {
   handleFilterChange: (value: string) => void;
   initialValue?: string;
+  forceScroll?: boolean;
 }) {
   const [filterValue, setFilterValue] = useState(initialValue);
 
   useEffect(() => {
     const element = document.querySelector(`#tag-${initialValue}`);
-    if (element) {
+    if (element && forceScroll) {
       element.scrollIntoView({
         behavior: "smooth",
         block: "nearest",

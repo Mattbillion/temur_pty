@@ -76,7 +76,10 @@ const ImageGallery = () => {
             See all
           </Button>
         </div>
-        <GalleryFilter handleFilterChange={handleFilterChange} />
+        <GalleryFilter
+          handleFilterChange={handleFilterChange}
+          forceScroll={false}
+        />
         <div className="relative">
           <Swiper
             breakpoints={{
