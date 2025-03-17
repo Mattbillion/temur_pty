@@ -74,6 +74,7 @@ export function Footer() {
                         href={`tel://${c.link}`}
                         className="text-secondary flex items-center gap-1"
                         key={idx3}
+                        prefetch={false}
                       >
                         <Image
                           src="/icons/phone.svg"
@@ -90,6 +91,7 @@ export function Footer() {
                       <Link
                         href={`mailto:${c.link}`}
                         className="text-secondary flex items-center gap-1"
+                        prefetch={false}
                         key={idx3}
                       >
                         <Image
