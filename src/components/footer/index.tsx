@@ -71,7 +71,7 @@ export function Footer() {
                   if (c.type === "phone") {
                     return (
                       <Link
-                        href={c.link}
+                        href={`tel://${c.link}`}
                         className="text-secondary flex items-center gap-1"
                         key={idx3}
                       >
@@ -88,7 +88,7 @@ export function Footer() {
                   if (c.type === "email") {
                     return (
                       <Link
-                        href={c.link}
+                        href={`mailto:${c.link}`}
                         className="text-secondary flex items-center gap-1"
                         key={idx3}
                       >
