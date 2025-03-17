@@ -24,6 +24,7 @@ export async function GET(req: Request) {
         Authorization: `Basic ${Buffer.from(`${apiKey}:${apiSecret}`).toString("base64")}`,
       },
       method: "GET",
+      cache: "force-cache",
     });
 
     if (!response.ok) {
