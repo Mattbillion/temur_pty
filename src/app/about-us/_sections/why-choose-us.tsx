@@ -5,7 +5,7 @@ import { BadgeCheck } from "lucide-react";
 
 export const WhyChooseUsSection = () => {
   return (
-    <div className="container grid grid-cols-2 gap-4">
+    <div className="container grid gap-4 md:grid-cols-2">
       {items.map((item, idx) => (
         <div
           className="text-secondary bg-background border border-[#18243A] p-8 transition-colors duration-300 hover:border-[#FFB63F] hover:text-[#FFB63F]"

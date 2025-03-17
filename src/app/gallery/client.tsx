@@ -44,7 +44,7 @@ export default function GalleryClient({
   if (error) return null;
 
   return (
-    <div className="container mt-[256px] flex w-full flex-col">
+    <div className="container mt-[256px] flex w-full flex-col max-md:mt-[100px]">
       <GalleryFilter
         handleFilterChange={handleFilterChange}
         initialValue={tag}

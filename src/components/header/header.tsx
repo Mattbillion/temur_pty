@@ -51,7 +51,9 @@ export const Header = () => {
               key={idx}
               className={cn(
                 "text-secondary text-xl transition-colors duration-100 hover:text-[#FFB63F]",
-                { "text-[#FFB63F]": pathname === link.href },
+                {
+                  "text-[#FFB63F]": pathname !== "/" && pathname === link.href,
+                },
               )}
             >
               {link.title}
