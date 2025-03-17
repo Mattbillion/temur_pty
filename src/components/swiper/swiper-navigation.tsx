@@ -8,9 +8,6 @@ export function SwiperNavigation({
 }: {
   swiperRef: React.RefObject<Swiper | null>;
 }) {
-  React.useEffect(() => {
-    console.log("swiperNavigation", swiperRef.current?.isBeginning);
-  }, [swiperRef]);
   return (
     <div className="">
       <Button
