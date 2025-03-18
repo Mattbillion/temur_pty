@@ -96,6 +96,9 @@ const ImageGallery = () => {
             spaceBetween={24}
             navigation={true}
             modules={[Autoplay, Navigation]}
+            autoplay={{
+              delay: 4000,
+            }}
             onBeforeInit={(swiper) => (swiperRef.current = swiper)}
             className="relative"
           >

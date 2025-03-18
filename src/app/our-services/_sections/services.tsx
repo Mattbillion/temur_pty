@@ -65,56 +65,49 @@ const services = [
     title: "Groundworks",
     description:
       "Includes the setup of crane foundations, lift footings, column footings, raft slabs, and ground slab mesh installations.",
-    src: "/images/services/ground-work.png",
+    src: "/images/services-image/ground-work.webp",
     tag: TagEnum.GROUND_WORK,
   },
   {
     title: "POST-TENSION SLAB",
     description:
       "Post-tensioned slabs require highly skilled and experienced steel fixers due to their complex detailing, including various sections, beams, trimmers, and shear ties. Precision and efficiency are crucial, as every component must be installed seamlessly. With our extensive experience, we ensure a clean, fast, and high-quality execution.",
-    src: "/images/services/pt-slab.png",
+    src: "/images/services-image/post-tension-slabs.webp",
     tag: TagEnum.POST_TENSION_SLABS,
   },
   {
     title: "CONVENTIONAL SLAB",
     description:
       "Our expertise in conventional slabs allows us to complete projects efficiently and within a short timeframe. With a well-coordinated team and seamless collaboration with crane crews, we ensure a highly organized workflow. This enables us to deliver faster and more efficiently than other methods.",
-    src: "/images/services/conventional-slab.png",
+    src: "/images/services-image/conventional-slabs.webp",
     tag: TagEnum.CONVENTIONAL_SLAB,
   },
   {
     title: "DRILL & EPOXY",
     description:
       "The Temur team offers comprehensive supply and installation services for all your Drill and Epoxy requirements.",
-    src: "/images/services/drill-epoxy.png",
+    src: "/images/services-image/drill-epoxy.webp",
     tag: TagEnum.DRILL_EPOXY,
   },
   {
     title: "TEMUR Ramp Installation",
     description:
       "We deliver and install any type of ramp—whether curved or straight, with beams or any other design. With extensive experience, we ensure that every ramp is finished to the highest standard.",
-    src: "/images/services/ramp.png",
+    src: "/images/services-image/ramp-installation.webp",
     tag: TagEnum.RAMP_INSTALLATION,
   },
   {
-    title: "CAPPING BEAM",
+    title: "SHEAR TIES",
     description:
       "The Temur reinforcement install boasts a large team of skilled internal form workers, concreters, and steel fixers, all with extensive experience in the installation of various types of capping beams.",
-    src: "/images/services/capping-beam.png",
+    src: "/images/services-image/shear-ties.webp",
     tag: TagEnum.CAPPING_BEAM,
   },
   {
     title: "WALLS AND COLUMNS",
     description:
       "We specialize in delivering precise, efficient, and high-quality solutions for core walls, lift shafts, stairwells, and retaining walls. With extensive experience and meticulous attention to detail, we ensure every project meets the highest standards of performance and durability.",
-    src: "/images/services/wall-and-columns.png",
+    src: "/images/services-image/wall&columns.webp",
     tag: TagEnum.WALLS_COLUMNS,
-  },
-  {
-    title: "BEAM WORK",
-    description:
-      "Beam works are a critical component of every project, involving detailed elements such as close-tie strirrups and leg ties. Typically, beams are designed for thicker slab sections, which demand significant time and manpower. Every detail requires meticulous attention, and our experienced steel fixers possess the expertise to manage the entire process with precision from start to finish. As a result, we can deliver it fast and easily.",
-    src: "/images/services/beam-work.png",
-    tag: TagEnum.CAPPING_BEAM,
   },
 ];

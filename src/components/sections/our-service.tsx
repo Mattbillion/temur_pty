@@ -76,7 +76,7 @@ const services: ServiceType[] = [
     className:
       "col-span-1 md:col-span-2 lg:col-span-1 md:aspect-[16/8] lg:aspect-[1/1] ",
     bgColor: "#F63426",
-    bgImage: "/images/services/ramp.png",
+    bgImage: "/images/services-image/ramp-installation.webp",
     tag: TagEnum.RAMP_INSTALLATION,
   },
   {
@@ -86,7 +86,7 @@ const services: ServiceType[] = [
     className:
       "col-span-1 md:col-span-1 lg:col-span-1 md:aspect-[1/1] lg:aspect-[1/1]",
     bgColor: "#052D5D",
-    bgImage: "/images/services/wall-and-columns.png",
+    bgImage: "/images/services-image/wall&columns.webp",
     tag: TagEnum.WALLS_COLUMNS,
   },
 
@@ -96,7 +96,7 @@ const services: ServiceType[] = [
       "Post-tensioned slabs require highly skilled and experienced steel fixers due to their complex detailing, including various sections, beams, trimmers, and shear ties. Precision and efficiency are crucial, as every component must be installed seamlessly. With our extensive experience, we ensure a clean, fast, and high-quality execution.",
     className: "col-span-1 md:col-span-1 lg:col-span-2 lg:aspect-[1/1]",
     bgColor: "#052D5D",
-    bgImage: "/images/services/pt-slab.png",
+    bgImage: "/images/services-image/post-tension-slabs.webp",
     tag: TagEnum.POST_TENSION_SLABS,
   },
   {
@@ -105,7 +105,7 @@ const services: ServiceType[] = [
       "Our expertise in conventional slabs allows us to complete projects efficiently and within a short timeframe. With a well-coordinated team and seamless collaboration with crane crews, we ensure a highly organized workflow. This enables us to deliver faster and more efficiently than other methods.",
     className: "col-span-1 md:col-span-2 lg:col-span-1 md:aspect-[16/8]",
     bgColor: "#052D5D",
-    bgImage: "/images/services/conventional-slab.png",
+    bgImage: "/images/services-image/conventional-slabs.webp",
     tag: TagEnum.CONVENTIONAL_SLAB,
   },
   {
@@ -113,7 +113,7 @@ const services: ServiceType[] = [
     className: "col-span-1 md:col-span-2 lg:col-span-2 md:aspect-[16/8]",
     description:
       "Beam works are a critical component of every project, involving detailed elements such as close-tie stirrups and leg ties. Typically, beams are designed for thicker slab sections, which demand significant time and manpower. Every detail requires meticulous attention, and our experienced steel fixers possess the expertise to manage the entire process with precision from start to finish. As a result, we can deliver it fast and easily.",
-    bgImage: "/images/services/beam-work.png",
+    bgImage: "/images/services-image/shear-ties.webp",
     tag: TagEnum.CAPPING_BEAM,
   },
   {
