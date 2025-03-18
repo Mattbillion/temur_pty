@@ -25,22 +25,33 @@ export function HeroSection({ wrapperClass, imgSrc }: HeroSectionPropsType) {
           />
         </div>
       )}
-      <motion.div
-        className="absolute flex flex-col items-center gap-2 p-4 md:py-6"
-        initial={{ opacity: 0, y: -32 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 1,
-        }}
-      >
-        <h1 className="text-secondary text-center text-[32px] font-bold sm:text-[40px] md:text-[72px]">
+      <motion.div className="absolute flex flex-col items-center gap-2 p-4 md:py-6">
+        <motion.h1
+          className="text-secondary text-center text-[32px] font-bold sm:text-[40px] md:text-[72px]"
+          initial={{ opacity: 0, y: -32 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.5,
+            duration: 1.2,
+            bounce: 0.2,
+          }}
+        >
           STEELFIXING YOU CAN TRUST
-        </h1>
-        <div className="md:bg-primary text-secondary rounded-md max-sm:max-w-[320px] max-sm:min-w-[280px] md:px-3 md:py-1 md:text-center md:text-lg">
+        </motion.h1>
+        <motion.div
+          className="md:bg-primary text-secondary rounded-md max-sm:max-w-[320px] max-sm:min-w-[280px] md:px-3 md:py-1 md:text-center md:text-lg"
+          initial={{ opacity: 0, y: 32 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.6,
+            duration: 1.2,
+            bounce: 0.2,
+          }}
+        >
           <h6 className="text-center">
             Reinforcement installation with expertise and reliability
           </h6>
-        </div>
+        </motion.div>
       </motion.div>
       \
       <DotLottieReact

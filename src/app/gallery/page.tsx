@@ -1,5 +1,6 @@
 import { CloudinaryAPIResponse } from "@/components/gallery/action";
 import GalleryClient from "@/app/gallery/client";
+import { HeroSection } from "@/app/gallery/_sections/hero-section";
 
 const LIMIT = 20;
 const domain =
@@ -24,14 +25,17 @@ export default async function GalleryPage({
   const data = (await res.json()) as CloudinaryAPIResponse;
 
   return (
-    <GalleryClient
-      limit={LIMIT}
-      initialData={{
-        next_cursor: data.next_cursor,
-        resources: {
-          [tag]: data.resources || [],
-        },
-      }}
-    />
+    <div>
+      <HeroSection />
+      <GalleryClient
+        limit={LIMIT}
+        initialData={{
+          next_cursor: data.next_cursor,
+          resources: {
+            [tag]: data.resources || [],
+          },
+        }}
+      />
+    </div>
   );
 }
