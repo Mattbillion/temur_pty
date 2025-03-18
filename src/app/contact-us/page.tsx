@@ -7,7 +7,7 @@ export default function Page() {
     <div className="w-full">
       <HeroSection />
       <motion.div
-        className="text-secondary container grid gap-4 md:grid-cols-4"
+        className="text-secondary container grid gap-4 md:grid-cols-3"
         initial={{
           opacity: 0,
           y: -32,
@@ -15,24 +15,20 @@ export default function Page() {
         animate={{
           opacity: 1,
           y: 0,
-          transition: { duration: 0.6, type: "linear" },
+          transition: { duration: 1.2, type: "spring", delay: 0.2 },
         }}
       >
-        <div className="border border-[#18243A] p-8">
+        <div className="cursor-pointer border border-[#18243A] p-8">
           <h4 className="text-lg font-bold"> Telephone</h4>
-          <p>+02 9718 0306</p>
+          <p>+02 0410581900</p>
         </div>
-        <div className="border border-[#18243A] p-8">
+        <div className="cursor-pointer border border-[#18243A] p-8">
           <h4 className="text-lg font-bold"> Telephone</h4>
-          <p>+02 9718 0306</p>
+          <p>+02 0499205975</p>
         </div>
-        <div className="border border-[#18243A] p-8">
-          <h4 className="text-lg font-bold"> Telephone</h4>
-          <p>+02 9718 0306</p>
-        </div>
-        <div className="border border-[#18243A] p-8">
+        <div className="cursor-pointer border border-[#18243A] p-8">
           <h4 className="text-lg font-bold">Mail</h4>
-          <p>temur@info.au.com</p>
+          <p>info@temursteelfixing.com.au</p>
         </div>
       </motion.div>
       <GetInTouchSection />

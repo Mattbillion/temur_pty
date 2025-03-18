@@ -108,10 +108,21 @@ export function Footer() {
                 })}
               </div>
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex w-full flex-col gap-2">
               <h3 className="text-xl font-bold text-[#FFB63F]">
                 {socials.title}
               </h3>
+              <Link
+                href="https://www.instagram.com/temursteelfixing?igsh=MWE2M291aDF2ZmJ5Mw%3D%3D&utm_source=qr&fbclid=IwY2xjawIpS95leHRuA2FlbQIxMAABHXRfnSZnzIOHJMCHJxVyUg5_p7bwyak2_RpCG6u-71DDLAFgBX6DdCr57A_aem_k7tSpZrdmqWvv9N0oNe2jA"
+                className="relative flex h-8 w-8 cursor-pointer items-center"
+              >
+                <Image
+                  src="/icons/instagram.svg"
+                  alt="instagram"
+                  fill
+                  className="aspect-square object-contain"
+                />
+              </Link>
             </div>
           </div>
         </div>
