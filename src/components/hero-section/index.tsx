@@ -25,7 +25,7 @@ export function HeroSection({ wrapperClass, imgSrc }: HeroSectionPropsType) {
           />
         </div>
       )}
-      <motion.div className="absolute flex flex-col items-center gap-2 p-4 md:py-6">
+      <div className="absolute flex flex-col items-center gap-2 p-4 md:py-6">
         <motion.h1
           className="text-secondary text-center text-[32px] font-bold sm:text-[40px] md:text-[72px]"
           initial={{ opacity: 0, y: -32 }}
@@ -52,7 +52,7 @@ export function HeroSection({ wrapperClass, imgSrc }: HeroSectionPropsType) {
             Reinforcement installation with expertise and reliability
           </h6>
         </motion.div>
-      </motion.div>
+      </div>
       \
       <DotLottieReact
         src="https://lottie.host/d99fc093-282c-47fc-ac14-2b96b0d3587c/SgDvgX74eA.lottie"

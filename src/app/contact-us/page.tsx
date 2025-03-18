@@ -20,11 +20,11 @@ export default function Page() {
       >
         <div className="cursor-pointer border border-[#18243A] p-8">
           <h4 className="text-lg font-bold"> Telephone</h4>
-          <p>+02 0410581900</p>
+          <p>+61 0410581900</p>
         </div>
         <div className="cursor-pointer border border-[#18243A] p-8">
           <h4 className="text-lg font-bold"> Telephone</h4>
-          <p>+02 0499205975</p>
+          <p>+61 0499205975</p>
         </div>
         <div className="cursor-pointer border border-[#18243A] p-8">
           <h4 className="text-lg font-bold">Mail</h4>

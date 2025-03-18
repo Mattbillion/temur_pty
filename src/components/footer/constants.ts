@@ -66,10 +66,15 @@ export const footer_links = {
       },
       {
         type: "phone",
-        link: "+02 9718 0306",
+        link: "+61 0410581900",
+      },
+      {
+        type: "phone",
+        link: "+61 0499205975",
       },
     ],
   },
+
   socials: {
     title: "Social links",
     links: [
