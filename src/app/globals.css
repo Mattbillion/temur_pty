@@ -1,6 +1,7 @@
 @import "tailwindcss";
 /*---break---*/
 @plugin "tailwindcss-animate";
+@plugin "tailwind-scrollbar";
 /*---break---*/
 @custom-variant dark (&:is(.dark *));
 

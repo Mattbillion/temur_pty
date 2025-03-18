@@ -10,7 +10,7 @@ export function HeroSection({ wrapperClass, imgSrc }: HeroSectionPropsType) {
     <div
       className={cn(
         wrapperClass,
-        "relative flex h-screen w-full items-center justify-center overflow-hidden max-md:h-[480px]",
+        "relative flex h-dvh w-full items-center justify-center overflow-hidden",
       )}
     >
       <div className="absolute -top-[372px] -left-[240px] size-[600px] rounded-full bg-[#F63426] opacity-60 blur-[122px] md:-top-[560px] md:-left-[520px] md:size-[978px] md:opacity-60 md:blur-[188px]" />

@@ -6,7 +6,7 @@ export default function GetInTouchSection() {
     <section className="py-16">
       <div className="container mx-auto">
         <div className="flex flex-col gap-8 md:flex-row">
-          <div className="relative hidden overflow-hidden rounded-xl md:block md:w-[41%]">
+          <div className="relative hidden overflow-hidden rounded-[24px] md:block md:w-[41%]">
             <div className="absolute inset-0 z-10 flex flex-col justify-end bg-black/50 p-8">
               <h2 className="mb-4 text-3xl font-bold text-white">
                 Get in touch
@@ -29,7 +29,9 @@ export default function GetInTouchSection() {
           {/* Right side - Form */}
           <div className="flex-1 md:w-[59%]">
             <div className="mb-8 md:hidden">
-              <h2 className="mb-4 text-3xl font-bold">Get in touch</h2>
+              <h2 className="mb-4 text-3xl font-bold text-white">
+                Get in touch
+              </h2>
               <p className="text-muted-foreground">
                 Feel free to reach out to us for any inquiries or project
                 discussions. Our team is ready to assist you with expert
