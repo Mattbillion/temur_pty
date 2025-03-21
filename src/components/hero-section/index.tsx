@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import * as motion from "motion/react-client";
 import { VideoHero } from "@/components/hero-section/video-hero";
