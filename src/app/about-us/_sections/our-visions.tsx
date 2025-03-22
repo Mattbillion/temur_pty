@@ -46,7 +46,7 @@ export function OurVisions() {
         </div>
         <div className="relative h-[400px] w-full max-md:col-span-1 max-md:hidden">
           <Image
-            src="/images/bento/our-vision.png"
+            src="/images/bento/vision.png"
             alt="quality"
             fill
             className="object-cover"

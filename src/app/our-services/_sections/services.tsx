@@ -85,7 +85,7 @@ const services = [
   {
     title: "DRILL & EPOXY",
     description:
-      "The Temur team offers comprehensive supply and installation services for all your Drill and Epoxy requirements.",
+      "The Temur team specializes in professional drilling services and epoxy applications, working closely with builders to ensure high-quality results for every project.",
     src: "/images/services-image/drill-epoxy.webp",
     tag: TagEnum.DRILL_EPOXY,
   },
@@ -97,9 +97,9 @@ const services = [
     tag: TagEnum.RAMP_INSTALLATION,
   },
   {
-    title: "SHEAR TIES",
+    title: "BEAMS AND SHEAR TIES",
     description:
-      "The Temur reinforcement install boasts a large team of skilled internal form workers, concreters, and steel fixers, all with extensive experience in the installation of various types of capping beams.",
+      "Beam works are a critical component of every project, involving detailed elements such as close-tie stirrups and leg ties. Typically, beams are designed for thicker slab sections, which demand significant time and manpower. Every detail requires meticulous attention, and our experienced steel fixers possess the expertise to manage the entire process with precision from start to finish. As a result, we can deliver it fast and easily.",
     src: "/images/services-image/shear-ties.webp",
     tag: TagEnum.CAPPING_BEAM,
   },
