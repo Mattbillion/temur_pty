@@ -23,6 +23,7 @@ export const VideoHero = () => {
         autoPlay
         loop
         muted
+        playsInline
         className="absolute inset-0 h-full w-full object-cover"
       >
         <source src="/video/hero-section-video.mov" type="video/mp4" />
