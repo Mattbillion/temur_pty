@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import * as motion from "motion/react-client";
 import { VideoHero } from "@/components/hero-section/video-hero";
+import "cloudinary-video-player/cld-video-player.min.css";
 
 export function HeroSection({ wrapperClass }: HeroSectionPropsType) {
   return (
@@ -13,9 +14,7 @@ export function HeroSection({ wrapperClass }: HeroSectionPropsType) {
         "relative flex h-fit w-full items-center justify-center overflow-hidden",
       )}
     >
-      <div className="h-fit w-full">
-        <VideoHero />
-      </div>
+      <VideoHero />
       <div className="absolute z-30 flex flex-col items-center gap-2 p-4 md:py-6">
         <motion.h1
           className="text-secondary text-center text-[32px] font-bold sm:text-[40px] md:text-[72px]"
