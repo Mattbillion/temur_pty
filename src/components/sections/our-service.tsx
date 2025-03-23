@@ -109,7 +109,7 @@ const services: ServiceType[] = [
     tag: TagEnum.CONVENTIONAL_SLAB,
   },
   {
-    title: "Beam works",
+    title: "Beams and shear ties",
     className: "col-span-1 md:col-span-2 lg:col-span-2 md:aspect-[16/8]",
     description:
       "Beam works are a critical component of every project, involving detailed elements such as close-tie stirrups and leg ties. Typically, beams are designed for thicker slab sections, which demand significant time and manpower. Every detail requires meticulous attention, and our experienced steel fixers possess the expertise to manage the entire process with precision from start to finish. As a result, we can deliver it fast and easily.",
