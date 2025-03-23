@@ -43,7 +43,7 @@ export function HeroSection({ wrapperClass }: HeroSectionPropsType) {
           </h6>
         </motion.div>
       </div>
-      \
+
       <DotLottieReact
         src="https://lottie.host/d99fc093-282c-47fc-ac14-2b96b0d3587c/SgDvgX74eA.lottie"
         loop
