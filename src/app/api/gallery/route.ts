@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 
+export const revalidate = 21600; // 6 hours
+
 export async function GET(req: Request) {
   const cloudName = process.env.CLOUDINARY_CLOUD_NAME;
   const apiKey = process.env.CLOUDINARY_API_KEY;
@@ -25,6 +27,7 @@ export async function GET(req: Request) {
       },
       method: "GET",
       cache: "force-cache",
+      next: { revalidate: 21600 },
     });
 
     if (!response.ok) {
