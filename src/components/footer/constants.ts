@@ -62,7 +62,11 @@ export const footer_links = {
     links: [
       {
         type: "email",
-        link: "info@temur.com.au",
+        link: "info@temursteelfixing.com.au",
+      },
+      {
+        type: "email",
+        link: "temursteelfixing@gmail.com",
       },
       {
         type: "phone",
