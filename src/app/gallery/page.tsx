@@ -3,6 +3,9 @@ import GalleryClient from "@/app/gallery/client";
 import { HeroSection } from "@/app/gallery/_sections/hero-section";
 
 const LIMIT = 20;
+
+export const revalidate = 21600; // 6 hours
+
 const domain =
   process.env.NODE_ENV === "development"
     ? "http://localhost:3000"

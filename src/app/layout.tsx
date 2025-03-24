@@ -23,7 +23,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Temur steel fixing</title>
         <link rel="preload" as="image" href="/texture/body-pattern.png" />
         <link
           rel="icon"
