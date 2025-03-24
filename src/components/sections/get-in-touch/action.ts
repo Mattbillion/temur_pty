@@ -22,7 +22,7 @@ export async function sendContactEmail(formData: z.infer<typeof formSchema>) {
           MESSAGE: message,
           PHONE: phone,
         },
-        listIds: [parseInt(process.env.BREVO_LIST_ID || "0", 10)],
+        listIds: [parseInt(process.env.BREVO_LIST_ID || "2", 10)],
         updateEnabled: true,
       }),
     });
